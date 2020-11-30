@@ -1,0 +1,9 @@
+<h1>PINK LADY COCKTAIL RECIPES</h1>
+<p>Find your favorite cocktail recipes below.</p>
+
+<% @cocktails.each do |cocktail| %>
+  <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+<% end %>
+
+<%= link_to 'Create cocktails', new_cocktail_path %>
+
