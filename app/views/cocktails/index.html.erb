@@ -9,14 +9,16 @@
 
 </nav>
   <div class = "navbar-divider"></div>
-<p>Find your favorite cocktail recipes below.</p>
+
 
 
 <div class="container">
-  <div class="row ">
+<p>Find your favorite cocktail recipes!</p>
+<%= link_to 'Create New Cocktails', new_cocktail_path,  class: "btn btn-primary " %>
+  <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-md-4 mb-4 d-flex justify-content-around">
-        <div class="card " style="width: 18rem;">
+        <div class="card " style="width: 16rem;">
           <img class="card-img-top" src="https://picsum.photos/seed/picsum/70/35" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title font-weight-bold"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
