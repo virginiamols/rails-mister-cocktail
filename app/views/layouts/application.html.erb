@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-light justify-content-around" style="background-color: #231832;">
+
+      <a class="navbar-brand text-white">🍹 Pink Lady Cocktails</a>
+      <form class="form-inline">
+        <input class="form-control mrlaceholder="-2" type="search" pSearch" aria-label="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
     <%= yield %>
+    <div class="footer d-flex justify-content-center"><%= link_to "Made with ", "https://github.com/Minhshi" %><%= link_to "", "https://github.com/Virginiamols", class: "fas fa-heart" %></div>
   </body>
 </html>
