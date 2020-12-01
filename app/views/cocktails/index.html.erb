@@ -1,9 +1,9 @@
-
-<nav class="navbar navbar-light justify-content-between" style="background-color: #231832;">
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<nav class="navbar navbar-light justify-content-around" style="background-color: #231832;">
 
   <a class="navbar-brand text-white">🍹 Pink Lady Cocktails</a>
   <form class="form-inline">
-    <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+    <input class="form-control mrlaceholder="-2" type="search" pSearch" aria-label="Search">
     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
   </form>
 
@@ -11,15 +11,15 @@
 <%# <div class = "navbar-divider"></div>%>
 
 <div class="container">
-<p>Find your favorite cocktail recipes!</p>
+<p class="mt-4">Find your favorite cocktail recipes!</p>
 <%= link_to 'Create New Cocktails', new_cocktail_path,  class: "btn btn-dark mb-3 " %>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-md-4 mb-4 d-flex justify-content-around">
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3 mb-3">
         <div class="card " style="width: 16rem;">
           <img class="card-img-top" src="https://res.cloudinary.com/jerrick/image/upload/fl_progressive,q_auto,w_1024/gfpaqqeymt8qplruy2go.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title font-weight-bold"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
+            <h5 class="card-title font-weight-bold"><%= link_to cocktail.name, cocktail_path(cocktail)%></h5>
               <ul class="list-unstyled list-inline rating mb-0">
                 <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
                 <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
@@ -29,10 +29,11 @@
                 <li class="list-inline-item"><p class="text-muted">4.5 (413)</p></li>
               </ul>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-dark">Edit Cocktail</a>
+            <a href="#" class="btn btn-dark btn-sm">Edit Cocktail</a>
           </div>
         </div>      
       </div>
     <% end %>
   </div>
 </div>
+
