@@ -1,11 +1,30 @@
-<h1> <%= @cocktail.name %> </h1>
 
+<div class="container">
+  
+  <h1 class="mt-5 mb-3"><%= @cocktail.name %></h1>
+  <%= link_to "Back to Cocktails", cocktails_path, class: "btn btn-light btn-sm mb-2" %>
+<div class="img-wrapper">
+  <%= link_to cl_image_tag(@cocktail.photo.key, crop: :fill, :radius=>5), cocktail_path(@cocktail), class: "img-cocktail" %>
+</div>
 
-<% @cocktail.doses.each do |dose| %>
-  <li>
-      <%= dose.description %> - <%= dose.ingredient.name %>
-  </li>
-<% end %>
-<%= link_to 'Create Doses', new_cocktail_dose_path(@cocktail), class: "btn btn-primary btn-sm%"%>
+ <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <table class="table table-bordered mt-3">
+        <tbody>
+          <thead>
+            <th>Ingredient</th>
+            <th>Description</th>
+          </thead>
+          <% @cocktail.doses.each do |dose| %>
+            <tr>
+              <td><%= dose.description %></td>
+              <td><%= dose.ingredient.name %></td>              
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<%= link_to 'Create Doses', new_cocktail_dose_path(@cocktail), class: "btn btn-dark btn-sm%"%>
 
-<%= link_to "Back to Cocktails", cocktails_path, class: "btn btn-light btn-sm%" %>
+</div>

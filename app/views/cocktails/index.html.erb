@@ -3,8 +3,8 @@
 <%# <div class = "navbar-divider"></div>%>
 
 <div class="container">
-<h1 class="my-5">Find your favorite cocktail recipes!</h1>
-<%= link_to 'Create New Cocktails', new_cocktail_path,  class: "btn btn-dark btn-lg mb-3  " %>
+<h2 class="my-4">Find your favorite cocktail recipes!</h2>
+<%= link_to 'Create New Cocktails', new_cocktail_path, class: "btn btn-dark btn-lg mb-3" %>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3 mb-3 justify-content-around">
@@ -24,8 +24,8 @@
                 <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
                 <li class="list-inline-item"><p class="text-muted">4.5 (413)</p></li>
               </ul>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-dark btn-sm">Edit Cocktail</a>
+            <p class="card-text"></p>
+            <%= link_to 'Edit Doses', cocktail_path(cocktail), class: "btn btn-dark btn-sm d-flex justify-content-around "%>
           </div>
         </div>      
       </div>

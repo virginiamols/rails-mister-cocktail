@@ -20,6 +20,14 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def delete
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.delete
+    redirect_to cocktails_path
+  end
+
+  private
+
   def cocktail_params
     params.require(:cocktail).permit(:name, :photo)
   end
