@@ -12,7 +12,7 @@
           <% if cocktail.photo.present? %>
             <%= cl_image_tag cocktail.photo.key, height: 150, width: 255, crop: :fill %>
             <% else %>
-              <%= image_tag("drinks_geral", size: "255x150")%>
+              <%= image_tag("drinks_geral.jpg", size: "255x150")%>
             <% end %>
           <div class="card-body">
             <h5 class="card-title font-weight-bold"><%= link_to cocktail.name, cocktail_path(cocktail)%></h5>
